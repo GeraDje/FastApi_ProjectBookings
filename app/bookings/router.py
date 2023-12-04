@@ -1,15 +1,18 @@
 from fastapi import APIRouter
 from sqlalchemy import select
 from app.bookings.dao import BookingDAO
+from app.bookings.shemas import SBooking
 from app.database import async_session_maker
 from app.bookings.models import Bookings
 
+'''Файл где пишем все эндпоинты связанные с бронированием'''
 
 router = APIRouter(prefix='/bookings',tags=['Бронирования'])
 
 
 @router.get('')
-async def get_bookings():
+async def get_bookings()->list[SBooking]:
     return await BookingDAO.find_all()
+    
 
    

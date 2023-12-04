@@ -4,6 +4,8 @@ from sqlalchemy.orm import relationship, mapped_column, Mapped
 
 from app.database import Base
 
+'''файл для создания таблиц в бд'''
+
 class Bookings(Base):
     __tablename__ = "bookings"
 
